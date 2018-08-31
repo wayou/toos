@@ -43,13 +43,9 @@ var Toast = /** @class */ (function () {
      * @param {showOption} options
      * @memberof Toast
      */
-    Toast.show = function (messageOrOption) {
+    Toast.show = function (message, options) {
         var _this = this;
-        var toastOption = Object.assign({}, this.defaultOptions, typeof messageOrOption !== "object"
-            ? {
-                message: messageOrOption
-            }
-            : messageOrOption);
+        var _options = Object.assign({}, this.defaultOptions, options);
         var element = document.getElementById("toast");
         if (this.timer) {
             window.clearTimeout(this.timer);
@@ -57,36 +53,38 @@ var Toast = /** @class */ (function () {
             this._hide(element);
         }
         if (!element) {
-            element = this._create(toastOption);
+            element = this._create(message, _options);
         }
         else {
-            this._applyOption(element, toastOption);
+            this._applyOption(element, message, _options);
         }
         this._show(element);
         this.timer = window.setTimeout(function () {
             _this._hide(element);
-        }, toastOption.duration);
+        }, _options.duration);
     };
     /**
-     * the option may differ each time so apply it in every show
+     * apply options for each show
      * @param element the root element of the toast
-     * @param options
+     * @param message message to show
+     * @param options toast options
      */
-    Toast._applyOption = function (element, options) {
+    Toast._applyOption = function (element, message, options) {
         element.className = "" + options.class;
         if (options.style) {
             element.style.cssText = options.style + ";";
         }
-        element.innerHTML = "\n            " + options.message + "\n            ";
+        element.innerHTML = "" + message;
     };
     /**
-     * create the element wich holds the toast
-     * @param options
+     * create toast element and append to page
+     * @param message message to show
+     * @param options toast options
      */
-    Toast._create = function (options) {
+    Toast._create = function (message, options) {
         var element = document.createElement("div");
         element.setAttribute("id", "toast");
-        this._applyOption(element, options);
+        this._applyOption(element, message, options);
         document.body.appendChild(element);
         return element;
     };
@@ -111,7 +109,6 @@ var Toast = /** @class */ (function () {
     Toast.defaultOptions = {
         class: "",
         duration: 3000,
-        message: "",
         style: ""
     };
     Toast.timer = null;

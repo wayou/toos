@@ -30,25 +30,25 @@ $ yarn add toos
 import Toos from 'toos';
 
 Toos.show('Allo!');
-Toos.show({
-    style: 'color:red;',
-    message: 'Allo!'
+
+Toos.show('Allo!', {
+    style: 'color:red;'
 });
 ```
 
 
 ### methods
 
-- `show: (options: string | number | ToastOptions) => void`: show the tost, accept plain string, number or an object as option
+- `show: (message: string | number ,options:  ToastOptions) => void`: show the toast
+    - `message`: the message to show
+        - type: `string`,
+        - default: N/A
     - `ToastOptions`: use the option object to custumize the toast
         - `style`: style for the toast
             - type: `string`
             - default: ` `
         - `class`: class name to customize the style
             - type: `string`
-            - default: ` `
-        - `message`:  the message to show 
-            - type: `string | number`
             - default: ` `
         - `duration?: number`: toast duration in ms
             - type: `number`

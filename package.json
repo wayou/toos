@@ -1,6 +1,6 @@
 {
   "name": "toos",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "a simple toast",
   "author": "wayou",
   "main": "dist/main.cjs.js",

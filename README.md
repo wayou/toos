@@ -1,8 +1,9 @@
 toos
 ===
 
-[![npm package](https://img.shields.io/npm/v/wayou/toos.svg)](https://www.npmjs.com/package/wayou/toos)
-[![npm package](https://img.shields.io/npm/dm/wayou/toos.svg)](https://www.npmjs.com/package/wayou/toos)
+![MIT LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![npm package](https://img.shields.io/npm/v/toos.svg)](https://www.npmjs.com/package/wayou/toos)
+[![npm package](https://img.shields.io/npm/dt/packages/toos.svg)](https://www.npmjs.com/package/wayou/toos)
 
 
 A simple toast.

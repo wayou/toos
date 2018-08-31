@@ -18,9 +18,9 @@ Toos pronouses the same as Chinese word 「吐司」.
 ### install
 
 ```bash
-$ npm install -S toos
+$ npm i -S toos
 # or
-$ yarn add -D toos
+$ yarn add toos
 ```
 
 

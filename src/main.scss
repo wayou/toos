@@ -1,0 +1,25 @@
+#toast {
+  line-height: normal;
+  max-height: 80%;
+  overflow-y: auto;
+  max-width: 300px;
+  word-break: break-word;
+  color: #fff;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+}

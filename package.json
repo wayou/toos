@@ -1,0 +1,24 @@
+{
+  "name": "toos",
+  "version": "1.0.0",
+  "main": "dist/main.cjs.js",
+  "types": "./dist/main.d.ts",
+  "module": "dist/main.esm.js",
+  "browser": "dist/main.umd.js",
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "rollup": "^0.65.0",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-typescript": "^0.8.1",
+    "typescript": "^3.0.3"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "files": [
+    "dist"
+  ]
+}

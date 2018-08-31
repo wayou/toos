@@ -1,10 +1,18 @@
 {
   "name": "toos",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "description": "a simple toast",
+  "author": "wayou",
   "main": "dist/main.cjs.js",
   "types": "./dist/main.d.ts",
   "module": "dist/main.esm.js",
   "browser": "dist/main.umd.js",
+  "keywords": [
+    "toast",
+    "ui",
+    "component",
+    "react"
+  ],
   "devDependencies": {
     "node-sass": "^4.9.3",
     "rollup": "^0.65.0",
@@ -16,9 +24,20 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "publish": "npm run build && npm publish"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wayou/toos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wayou/toos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wayou/toos/issues",
+    "email": "liuwayong@gmail.com"
+  }
 }

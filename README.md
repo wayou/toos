@@ -1,9 +1,13 @@
 toos
 ===
 
+[![npm package](https://img.shields.io/npm/v/wayou/toos.svg)](https://www.npmjs.com/package/wayou/toos)
+[![npm package](https://img.shields.io/npm/dm/wayou/toos.svg)](https://www.npmjs.com/package/wayou/toos)
+
+
 A simple toast.
 
-Toos pronouse the same as Chinese word 「吐司」.
+Toos pronouses the same as Chinese word 「吐司」.
 
 
 ### preview
@@ -39,13 +43,13 @@ Toos.show({
     - `ToastOptions`: use the option object to custumize the toast
         - `style`: style for the toast
             - type: `string`
-            - default: ``
+            - default: ` `
         - `class`: class name to customize the style
             - type: `string`
-            - default: ``
+            - default: ` `
         - `message`:  the message to show 
             - type: `string | number`
-            - default: ``
+            - default: ` `
         - `duration?: number`: toast duration in ms
             - type: `number`
             - default: `300`

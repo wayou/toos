@@ -43,7 +43,7 @@ Toos.show('Allo!', {
     - `message`: the message to show
         - type: `string`,
         - default: N/A
-    - `ToastOptions`: use the option object to custumize the toast
+    - `options`: use the option object to custumize the toast
         - `style`: style for the toast
             - type: `string`
             - default: ` `

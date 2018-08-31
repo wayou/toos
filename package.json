@@ -1,6 +1,6 @@
 {
   "name": "toos",
-  "version": "0.1.0",
+  "version": "1.0.3",
   "description": "a simple toast",
   "author": "wayou",
   "main": "dist/main.cjs.js",
@@ -25,7 +25,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "publish": "npm run build && npm publish"
+    "pub": "npm run build && npm publish"
   },
   "files": [
     "dist"

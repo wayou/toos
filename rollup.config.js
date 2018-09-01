@@ -1,18 +1,20 @@
-import resolve from "rollup-plugin-node-resolve";
+import compiler from "@ampproject/rollup-plugin-closure-compiler";
 import commonjs from "rollup-plugin-commonjs";
+import resolve from "rollup-plugin-node-resolve";
 import tsplugin from "rollup-plugin-typescript";
-import postcss from "rollup-plugin-postcss";
 import typescript from "typescript";
 import pkg from "./package.json";
+import postcss from "rollup-plugin-postcss";
 
 export default [
   {
-    input: "src/main.ts",
+    input: "src/toos.ts",
     output: {
-      name: "Toos",
+      name: pkg.name,
       file: pkg.browser,
       format: "umd"
     },
+    sourcemap: true,
     plugins: [
       postcss({
         modules: false
@@ -21,11 +23,12 @@ export default [
         typescript: typescript
       }),
       resolve(),
-      commonjs()
+      commonjs(),
+      compiler()
     ]
   },
   {
-    input: "src/main.ts",
+    input: "src/toos.ts",
     output: [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" }

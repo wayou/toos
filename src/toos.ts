@@ -4,7 +4,7 @@
  * @description: a simple toast
  */
 
-import "./main.scss";
+import "./toos.scss";
 
 export interface ToastOptions {
   style?: string;

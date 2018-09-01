@@ -1,12 +1,12 @@
 {
   "name": "toos",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "a simple toast",
   "author": "wayou",
-  "main": "dist/main.cjs.js",
-  "types": "./dist/main.d.ts",
-  "module": "dist/main.esm.js",
-  "browser": "dist/main.umd.js",
+  "main": "dist/toos.cjs.js",
+  "types": "./dist/toos.d.ts",
+  "module": "dist/toos.esm.js",
+  "browser": "dist/toos.umd.js",
   "keywords": [
     "toast",
     "ui",
@@ -14,6 +14,7 @@
     "react"
   ],
   "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.6.1",
     "jest": "^23.5.0",
     "node-sass": "^4.9.3",
     "rollup": "^0.65.0",

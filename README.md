@@ -11,12 +11,14 @@ A simple toast.
 Toos pronouses the same as Chinese word 「吐司」.
 
 
-### preview
+### Preview
 
 ![toos preview](./assets/preview.gif)
 
 
-### install
+### Installing
+
+Using command line:
 
 ```bash
 $ npm i -S toos
@@ -24,8 +26,14 @@ $ npm i -S toos
 $ yarn add toos
 ```
 
+Using cdn:
 
-### usage
+```
+<script src="https://unpkg.com/toos/dist/toos.umd.js"></script>
+```
+
+
+### Usage
 
 ```js
 import Toos from 'toos';

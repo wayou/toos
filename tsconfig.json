@@ -17,11 +17,11 @@
   },
   "exclude": [
     "examples",
+    "dist",
     "node_modules",
     "build",
     "scripts",
     "acceptance-tests",
-    "webpack",
     "jest",
     "src/setupTests.ts"
   ]

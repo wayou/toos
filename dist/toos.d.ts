@@ -17,10 +17,8 @@ export interface IToastOptions {
 export default class Toos {
     /**
      * show the toast
-     *
-     * @static
-     * @param {showOption} options
-     * @memberof Toast
+     * @param message the content to show
+     * @param options options to customize the toas
      */
     static show(message: messageType, options?: IToastOptions): void;
     private static defaultOptions;

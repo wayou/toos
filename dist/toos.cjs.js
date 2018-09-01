@@ -33,17 +33,15 @@ styleInject(css);
 /*
  * @author: wayou
  * @date: 2018-08-28 12:12:54
- * @description: a simple toast
+ * @description: toos, a simple toast
  */
 var Toos = /** @class */ (function () {
     function Toos() {
     }
     /**
      * show the toast
-     *
-     * @static
-     * @param {showOption} options
-     * @memberof Toast
+     * @param message the content to show
+     * @param options options to customize the toas
      */
     Toos.show = function (message, options) {
         var _this = this;

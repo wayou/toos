@@ -1,7 +1,7 @@
 /*
  * @author: wayou
  * @date: 2018-08-28 12:12:54
- * @description: a simple toast
+ * @description: toos, a simple toast
  */
 
 import "./toos.scss";
@@ -26,12 +26,11 @@ export interface IToastOptions {
 }
 
 export default class Toos {
+
   /**
    * show the toast
-   *
-   * @static
-   * @param {showOption} options
-   * @memberof Toast
+   * @param message the content to show
+   * @param options options to customize the toas
    */
   public static show(message: messageType, options?: IToastOptions) {
     options = Object.assign({}, this.defaultOptions, options);

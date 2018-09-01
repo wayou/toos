@@ -8,11 +8,13 @@ import postcss from "rollup-plugin-postcss";
 
 const commonPlugins = [
   postcss({
-    modules: false
+    modules: false,
   }),
   tsplugin({
-    clean: true // NOTE: enable this to work compatable with closure compiler, or will cause Unknown object type "asyncfunction" error
-  })
+    // NOTE: enable this to work compatable with closure compiler,
+    //  or will cause Unknown object type "asyncfunction" error
+    clean: true,
+  }),
 ];
 
 export default [
@@ -22,16 +24,13 @@ export default [
       name: pkg.name,
       file: pkg.browser,
       format: "umd",
-      sourcemap: true
+      sourcemap: true,
     },
-    plugins: commonPlugins.concat([resolve(), commonjs(), closureCompiler()])
+    plugins: commonPlugins.concat([resolve(), commonjs(), closureCompiler()]),
   },
   {
     input: "src/toos.ts",
-    output: [
-      { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "es" }
-    ],
-    plugins: commonPlugins
-  }
+    output: [{ file: pkg.main, format: "cjs" }, { file: pkg.module, format: "es" }],
+    plugins: commonPlugins,
+  },
 ];

@@ -1,2 +1,5 @@
 .DS_Store
 node_modules
+
+# rollup-plugin-typescript2 cache files
+.rpt2_cache 

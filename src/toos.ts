@@ -6,15 +6,26 @@
 
 import "./toos.scss";
 
-export interface ToastOptions {
+type messageType = string | number;
+
+export interface IToastOptions {
+  /**
+   * inline style for the toast
+   */
   style?: string;
+
+  /**
+   * class name for the toast
+   */
   class?: string;
+
+  /**
+   * duration for the toast, in ms
+   */
   duration?: number;
 }
 
-type messageType = string | number;
-
-export default class Toast {
+export default class Toos {
   /**
    * show the toast
    *
@@ -22,8 +33,8 @@ export default class Toast {
    * @param {showOption} options
    * @memberof Toast
    */
-  public static show(message: messageType, options: ToastOptions) {
-    let _options = Object.assign({}, this.defaultOptions, options);
+  public static show(message: messageType, options?: IToastOptions) {
+    options = Object.assign({}, this.defaultOptions, options);
 
     let element = document.getElementById(`toast`);
     if (this.timer) {
@@ -32,21 +43,21 @@ export default class Toast {
       this._hide(element);
     }
     if (!element) {
-      element = this._create(message, _options);
+      element = this._create(message, options);
     } else {
-      this._applyOption(element, message, _options);
+      this._applyOption(element, message, options);
     }
 
     this._show(element);
     this.timer = window.setTimeout(() => {
       this._hide(element);
-    }, _options.duration);
+    }, options.duration);
   }
 
-  private static defaultOptions: ToastOptions = {
+  private static defaultOptions: IToastOptions = {
     class: "",
     duration: 3000,
-    style: ""
+    style: "",
   };
 
   private static timer: number | null = null;
@@ -60,7 +71,7 @@ export default class Toast {
   private static _applyOption(
     element: HTMLElement,
     message: messageType,
-    options: ToastOptions
+    options: IToastOptions,
   ) {
     element.className = `${options.class}`;
     if (options.style) {
@@ -76,7 +87,7 @@ export default class Toast {
    */
   private static _create(
     message: messageType,
-    options: ToastOptions
+    options: IToastOptions,
   ): HTMLElement {
     const element = document.createElement("div");
     element.setAttribute("id", "toast");

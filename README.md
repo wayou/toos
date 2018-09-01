@@ -28,7 +28,7 @@ $ yarn add toos
 
 Using cdn:
 
-```
+```html
 <script src="https://unpkg.com/toos/dist/toos.umd.js"></script>
 ```
 
@@ -36,17 +36,17 @@ Using cdn:
 ### Usage
 
 ```js
-import Toos from 'toos';
+import toos from 'toos';
 
-Toos.show('Allo!');
+toos.show('Allo!');
 
-Toos.show('Allo!', {
+toos.show('Allo!', {
     style: 'color:red;'
 });
 ```
 
 
-### methods
+### Methods
 
 - `show: (message: string | number ,options:  ToastOptions) => void`: show the toast
     - `message`: the message to show

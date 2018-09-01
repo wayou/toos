@@ -1,10 +1,19 @@
-import compiler from "@ampproject/rollup-plugin-closure-compiler";
+import closureCompiler from "@ampproject/rollup-plugin-closure-compiler";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
-import tsplugin from "rollup-plugin-typescript";
+import tsplugin from "rollup-plugin-typescript2";
 import typescript from "typescript";
 import pkg from "./package.json";
 import postcss from "rollup-plugin-postcss";
+
+const commonPlugins = [
+  postcss({
+    modules: false
+  }),
+  tsplugin({
+    clean: true // NOTE: enable this to work compatable with closure compiler, or will cause Unknown object type "asyncfunction" error
+  })
+];
 
 export default [
   {
@@ -12,20 +21,10 @@ export default [
     output: {
       name: pkg.name,
       file: pkg.browser,
-      format: "umd"
+      format: "umd",
+      sourcemap: true
     },
-    sourcemap: true,
-    plugins: [
-      postcss({
-        modules: false
-      }),
-      tsplugin({
-        typescript: typescript
-      }),
-      resolve(),
-      commonjs(),
-      compiler()
-    ]
+    plugins: commonPlugins.concat([resolve(), commonjs(), closureCompiler()])
   },
   {
     input: "src/toos.ts",
@@ -33,13 +32,6 @@ export default [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" }
     ],
-    plugins: [
-      postcss({
-        modules: false
-      }),
-      tsplugin({
-        typescript: typescript
-      })
-    ]
+    plugins: commonPlugins
   }
 ];

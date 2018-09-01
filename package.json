@@ -1,10 +1,10 @@
 {
   "name": "toos",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "a simple toast",
   "author": "wayou",
   "main": "dist/toos.cjs.js",
-  "types": "./dist/toos.d.ts",
+  "types": "dist/toos.d.ts",
   "module": "dist/toos.esm.js",
   "browser": "dist/toos.umd.js",
   "keywords": [
@@ -21,11 +21,12 @@
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^1.6.2",
-    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-typescript2": "^0.17.0",
+    "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "dev": "rollup -c -w",
     "pub": "npm run build && npm publish",
     "test": "jest"

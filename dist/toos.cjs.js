@@ -35,8 +35,8 @@ styleInject(css);
  * @date: 2018-08-28 12:12:54
  * @description: a simple toast
  */
-var Toast = /** @class */ (function () {
-    function Toast() {
+var Toos = /** @class */ (function () {
+    function Toos() {
     }
     /**
      * show the toast
@@ -45,9 +45,9 @@ var Toast = /** @class */ (function () {
      * @param {showOption} options
      * @memberof Toast
      */
-    Toast.show = function (message, options) {
+    Toos.show = function (message, options) {
         var _this = this;
-        var _options = Object.assign({}, this.defaultOptions, options);
+        options = Object.assign({}, this.defaultOptions, options);
         var element = document.getElementById("toast");
         if (this.timer) {
             window.clearTimeout(this.timer);
@@ -55,15 +55,15 @@ var Toast = /** @class */ (function () {
             this._hide(element);
         }
         if (!element) {
-            element = this._create(message, _options);
+            element = this._create(message, options);
         }
         else {
-            this._applyOption(element, message, _options);
+            this._applyOption(element, message, options);
         }
         this._show(element);
         this.timer = window.setTimeout(function () {
             _this._hide(element);
-        }, _options.duration);
+        }, options.duration);
     };
     /**
      * apply options for each show
@@ -71,7 +71,7 @@ var Toast = /** @class */ (function () {
      * @param message message to show
      * @param options toast options
      */
-    Toast._applyOption = function (element, message, options) {
+    Toos._applyOption = function (element, message, options) {
         element.className = "" + options.class;
         if (options.style) {
             element.style.cssText = options.style + ";";
@@ -83,7 +83,7 @@ var Toast = /** @class */ (function () {
      * @param message message to show
      * @param options toast options
      */
-    Toast._create = function (message, options) {
+    Toos._create = function (message, options) {
         var element = document.createElement("div");
         element.setAttribute("id", "toast");
         this._applyOption(element, message, options);
@@ -94,7 +94,7 @@ var Toast = /** @class */ (function () {
      * set the `show` class name to show the toast
      * @param element the root element of the toast
      */
-    Toast._show = function (element) {
+    Toos._show = function (element) {
         if (element) {
             element.className += "show";
         }
@@ -103,18 +103,18 @@ var Toast = /** @class */ (function () {
      * remove the `show` class name to hide the toast
      * @param element the root element of the toast
      */
-    Toast._hide = function (element) {
+    Toos._hide = function (element) {
         if (element) {
             element.className = element.className.replace("show", "");
         }
     };
-    Toast.defaultOptions = {
+    Toos.defaultOptions = {
         class: "",
         duration: 3000,
-        style: ""
+        style: "",
     };
-    Toast.timer = null;
-    return Toast;
+    Toos.timer = null;
+    return Toos;
 }());
 
-module.exports = Toast;
+module.exports = Toos;

@@ -1,7 +1,7 @@
 toos
 ===
 
-![MIT LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![MIT LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)
 [![npm package](https://img.shields.io/npm/v/toos.svg)](https://www.npmjs.com/package/toos)
 [![npm package](https://img.shields.io/npm/dt/toos.svg)](https://www.npmjs.com/package/toos)
 
@@ -21,15 +21,15 @@ Toos pronouses the same as Chinese word 「吐司」.
 Using command line:
 
 ```bash
-$ npm i -S toos
-# or
 $ yarn add toos
+# or
+$ npm i -S toos
 ```
 
 Using cdn:
 
 ```html
-<script src="https://unpkg.com/toos/dist/toos.umd.js"></script>
+<script src="//unpkg.com/toos/dist/toos.umd.js"></script>
 ```
 
 

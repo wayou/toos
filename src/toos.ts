@@ -30,7 +30,7 @@ export default class Toos {
   /**
    * show the toast
    * @param message the content to show
-   * @param options options to customize the toas
+   * @param options options to customize the toast
    */
   public static show(message: messageType, options?: IToastOptions) {
     options = Object.assign({}, this.defaultOptions, options);

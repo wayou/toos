@@ -12,7 +12,7 @@ const commonPlugins = [
   }),
   tsplugin({
     // NOTE: enable this to work compatable with closure compiler,
-    //  or will cause Unknown object type "asyncfunction" error
+    // or will cause Unknown object type "asyncfunction" error
     clean: true,
   }),
 ];

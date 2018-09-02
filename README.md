@@ -50,7 +50,7 @@ toos.show('Allo!', {
 
 - `show: (message: string | number ,options:  ToastOptions) => void`: show the toast
     - `message`: the message to show
-        - type: `string`,
+        - type: `string`
         - default: N/A
     - `options`: use the option object to custumize the toast
         - `style`: style for the toast

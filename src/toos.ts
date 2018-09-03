@@ -26,13 +26,12 @@ export interface IToastOptions {
 }
 
 export default class Toos {
-
   /**
    * show the toast
    * @param message the content to show
    * @param options options to customize the toast
    */
-  public static show(message: messageType, options?: IToastOptions) {
+  public static show(message: messageType, options?: IToastOptions): void {
     options = Object.assign({}, this.defaultOptions, options);
 
     let element = document.getElementById(`toast`);
@@ -67,11 +66,7 @@ export default class Toos {
    * @param message message to show
    * @param options toast options
    */
-  private static _applyOption(
-    element: HTMLElement,
-    message: messageType,
-    options: IToastOptions,
-  ) {
+  private static _applyOption(element: HTMLElement, message: messageType, options: IToastOptions) {
     element.className = `${options.class}`;
     if (options.style) {
       element.style.cssText = `${options.style};`;
@@ -84,10 +79,7 @@ export default class Toos {
    * @param message message to show
    * @param options toast options
    */
-  private static _create(
-    message: messageType,
-    options: IToastOptions,
-  ): HTMLElement {
+  private static _create(message: messageType, options: IToastOptions): HTMLElement {
     const element = document.createElement("div");
     element.setAttribute("id", "toast");
     this._applyOption(element, message, options);

@@ -48,7 +48,7 @@ toos.show('Allo!', {
 
 ### Methods
 
-- `show: (message: string | number ,options:  ToastOptions) => void`: show the toast
+- `show: (message: string | number, options:  ToastOptions) => void`: show the toast
     - `message`: the message to show
         - type: `string`
         - default: N/A

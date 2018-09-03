@@ -18,7 +18,7 @@ export default class Toos {
     /**
      * show the toast
      * @param message the content to show
-     * @param options options to customize the toas
+     * @param options options to customize the toast
      */
     static show(message: messageType, options?: IToastOptions): void;
     private static defaultOptions;

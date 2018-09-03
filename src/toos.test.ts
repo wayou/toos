@@ -1,6 +1,5 @@
-import toos from "./toos";
+import Toos from "./toos";
 
-test("should create toast element and append to body", () => {
-  // expect(toos.show('Allo!')).
-  // expect(toos.)
+test("it should works fine without crash", () => {
+  expect(Toos.show("Allo!")).toBeUndefined();
 });

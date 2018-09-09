@@ -50,7 +50,8 @@
     "prepublish": "yarn lint && yarn build && yarn test",
     "lint": "tslint --project ./ && stylelint \"./src/**/*.scss\"",
     "test": "jest",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:deploy": "storybook-to-ghpages -- --ci"
   },
   "files": [
     "dist"

@@ -1,6 +1,7 @@
 toos
 ===
 
+[![CircleCI](https://circleci.com/gh/wayou/toos.svg?style=svg)](https://circleci.com/gh/wayou/toos)
 [![MIT LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)
 [![npm package](https://img.shields.io/npm/v/toos.svg)](https://www.npmjs.com/package/toos)
 [![npm package](https://img.shields.io/npm/dt/toos.svg)](https://www.npmjs.com/package/toos)

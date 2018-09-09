@@ -64,6 +64,7 @@ toos.show('Allo!', {
             - type: `number`
             - default: `300`
 
+
 ### Examples
 
 See the [stories](https://wayou.github.io/toos/) for examples

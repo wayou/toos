@@ -50,7 +50,7 @@ var Toos = /** @class */ (function () {
         if (this.timer) {
             window.clearTimeout(this.timer);
             this.timer = null;
-            this._hide(element);
+            this._hide(element, options.class);
         }
         if (!element) {
             element = this._create(message, options);
@@ -60,7 +60,7 @@ var Toos = /** @class */ (function () {
         }
         this._show(element);
         this.timer = window.setTimeout(function () {
-            _this._hide(element);
+            _this._hide(element, options.class);
         }, options.duration);
     };
     /**
@@ -71,9 +71,7 @@ var Toos = /** @class */ (function () {
      */
     Toos._applyOption = function (element, message, options) {
         element.className = "" + options.class;
-        if (options.style) {
-            element.style.cssText = options.style + ";";
-        }
+        element.style.cssText = options.style + ";";
         element.innerHTML = "" + message;
     };
     /**
@@ -94,16 +92,17 @@ var Toos = /** @class */ (function () {
      */
     Toos._show = function (element) {
         if (element) {
-            element.className += "show";
+            element.className += " show";
         }
     };
     /**
      * remove the `show` class name to hide the toast
      * @param element the root element of the toast
      */
-    Toos._hide = function (element) {
+    Toos._hide = function (element, classNmae) {
+        if (classNmae === void 0) { classNmae = ""; }
         if (element) {
-            element.className = element.className.replace("show", "");
+            element.className = "" + classNmae;
         }
     };
     Toos.defaultOptions = {

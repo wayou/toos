@@ -38,7 +38,7 @@ export default class Toos {
     if (this.timer) {
       window.clearTimeout(this.timer);
       this.timer = null;
-      this._hide(element);
+      this._hide(element, options.class);
     }
     if (!element) {
       element = this._create(message, options);
@@ -48,7 +48,7 @@ export default class Toos {
 
     this._show(element);
     this.timer = window.setTimeout(() => {
-      this._hide(element);
+      this._hide(element, options!.class);
     }, options.duration);
   }
 
@@ -68,9 +68,7 @@ export default class Toos {
    */
   private static _applyOption(element: HTMLElement, message: messageType, options: IToastOptions) {
     element.className = `${options.class}`;
-    if (options.style) {
-      element.style.cssText = `${options.style};`;
-    }
+    element.style.cssText = `${options.style};`;
     element.innerHTML = `${message}`;
   }
 
@@ -93,7 +91,7 @@ export default class Toos {
    */
   private static _show(element: HTMLElement | null) {
     if (element) {
-      element.className += "show";
+      element.className += " show";
     }
   }
 
@@ -101,9 +99,9 @@ export default class Toos {
    * remove the `show` class name to hide the toast
    * @param element the root element of the toast
    */
-  private static _hide(element: HTMLElement | null) {
+  private static _hide(element: HTMLElement | null, classNmae: string = "") {
     if (element) {
-      element.className = element.className.replace("show", "");
+      element.className = `${classNmae}`;
     }
   }
 }

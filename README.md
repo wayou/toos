@@ -27,7 +27,7 @@ $ yarn add toos
 $ npm i -S toos
 ```
 
-Using cdn:
+Using CDN:
 
 ```html
 <script src="//unpkg.com/toos/dist/toos.umd.js"></script>

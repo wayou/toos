@@ -67,7 +67,7 @@ export default class Toos {
    * @param options toast options
    */
   private static _applyOption(element: HTMLElement, message: messageType, options: IToastOptions) {
-    element.className = `${options.class}`;
+    element.className = `toos ${options.class}`;
     element.style.cssText = `${options.style};`;
     element.innerHTML = `${message}`;
   }
@@ -101,7 +101,7 @@ export default class Toos {
    */
   private static _hide(element: HTMLElement | null, classNmae: string = "") {
     if (element) {
-      element.className = `${classNmae}`;
+      element.className = `toos ${classNmae}`;
     }
   }
 }

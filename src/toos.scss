@@ -1,4 +1,4 @@
-#toast {
+.toos {
   line-height: normal;
   max-height: 80%;
   overflow-y: auto;
@@ -17,9 +17,8 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s linear, opacity 0.3s linear;
-}
-
-#toast.show {
-  visibility: visible;
-  opacity: 1;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
 }

@@ -25,7 +25,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "#toast {\n  line-height: normal;\n  max-height: 80%;\n  overflow-y: auto;\n  max-width: 300px;\n  word-break: break-word;\n  color: #fff;\n  padding: 15px;\n  background: rgba(0, 0, 0, 0.8);\n  border-radius: 4px;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 9999;\n  text-align: center;\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0.3s linear, opacity 0.3s linear; }\n\n#toast.show {\n  visibility: visible;\n  opacity: 1; }\n";
+var css = ".toos {\n  line-height: normal;\n  max-height: 80%;\n  overflow-y: auto;\n  max-width: 300px;\n  word-break: break-word;\n  color: #fff;\n  padding: 15px;\n  background: rgba(0, 0, 0, 0.8);\n  border-radius: 4px;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 9999;\n  text-align: center;\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0.3s linear, opacity 0.3s linear; }\n  .toos.show {\n    visibility: visible;\n    opacity: 1; }\n";
 styleInject(css);
 
 /*
@@ -68,7 +68,7 @@ var Toos = /** @class */ (function () {
      * @param options toast options
      */
     Toos._applyOption = function (element, message, options) {
-        element.className = "" + options.class;
+        element.className = "toos " + options.class;
         element.style.cssText = options.style + ";";
         element.innerHTML = "" + message;
     };
@@ -100,7 +100,7 @@ var Toos = /** @class */ (function () {
     Toos._hide = function (element, classNmae) {
         if (classNmae === void 0) { classNmae = ""; }
         if (element) {
-            element.className = "" + classNmae;
+            element.className = "toos " + classNmae;
         }
     };
     Toos.defaultOptions = {
